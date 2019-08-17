@@ -3,7 +3,9 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
+# the function below creates a set,get,setinverse and get inverse.. to create the special matrix required
+
+makeCacheMatrix <- function(x = matrix()) {     
          i<-NULL
         set<-function(y){
                 x<<-y
@@ -19,13 +21,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+# check if cached inverse is available esle calcuate the inverse matrix
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
                 i<-x$getinverse()
         if(!is.null(i)){
                 message("getting cahced inverse matrix")
                 return(i)
-                
+               
         }
         data<-x$get()
         i<-solve(data,...)
